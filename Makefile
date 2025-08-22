@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help get analyze format test test-integration clean doctor ci prepare hook-install hook-uninstall hook-install-all protect-main
+.PHONY: help get analyze format test test-integration clean doctor ci prepare hook-install hook-uninstall hook-install-all protect-main fix-arb
 
 help:
 	@echo "Common Flutter tasks:" && \
@@ -12,6 +12,7 @@ help:
 	echo "  make hook-install-all # install pre-commit + commit-msg hooks" && \
 	echo "  make hook-uninstall   # remove pre-commit hook" && \
 	echo "  make protect-main     # apply GitHub branch protection via gh" && \
+	echo "  make fix-arb          # normalize ARB files (format/sort/metadata)" && \
 	echo "  make test             # flutter test -r compact" && \
 	echo "  make test FILE=path   # flutter test -r compact <path>" && \
 	echo "  make test-integration # flutter test integration_test -r compact" && \
@@ -71,3 +72,6 @@ hook-install-all: hook-install
 protect-main:
 	@echo "Applying branch protection to main via GitHub CLI..."
 	@bash scripts/protect_main_branch.sh
+
+fix-arb:
+	bash scripts/fix_arb.sh
