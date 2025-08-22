@@ -1,0 +1,66 @@
+name: Branch Protection Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+  administration: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch protection for main
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const branch = 'main';
+            try {
+              const res = await github.rest.repos.getBranchProtection({ owner, repo, branch });
+              const prot = res.data;
+
+              // Expectations
+              const expectedContexts = new Set([
+                'Flutter CI / build-test',
+                'Semantic PR Title',
+              ]);
+
+              const checks = prot.required_status_checks || {};
+              const contexts = new Set((checks.contexts || []));
+              const missing = [...expectedContexts].filter(c => !contexts.has(c));
+
+              const strict = !!checks.strict;
+              const admins = !!prot.enforce_admins?.enabled;
+              const pr = prot.required_pull_request_reviews || {};
+              const reviews = (pr.required_approving_review_count || 0) >= 1;
+              const dismissStale = !!pr.dismiss_stale_reviews;
+
+              const problems = [];
+              if (missing.length) problems.push(`Missing required status checks: ${missing.join(', ')}`);
+              if (!strict) problems.push('Required status checks are not strict (Require branches to be up to date).');
+              if (!admins) problems.push('Admin enforcement is not enabled.');
+              if (!reviews) problems.push('At least 1 approving review is required.');
+              if (!dismissStale) problems.push('Dismiss stale approvals on new commits is not enabled.');
+
+              if (problems.length) {
+                core.setFailed('Branch protection misconfigured:\n' + problems.map(p => `- ${p}`).join('\n'));
+              } else {
+                core.info('Branch protection looks good.');
+              }
+            } catch (err) {
+              if (err.status === 404) {
+                core.setFailed('Branch protection is not enabled for main.');
+              } else {
+                core.setFailed(`Failed to read branch protection: ${err.message}`);
+              }
+            }

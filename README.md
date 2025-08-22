@@ -87,3 +87,9 @@ Protect `main` to keep it always releasable:
 - Restrict who can push: allow only maintainers/bots if desired.
 
 GitHub path: `Settings → Branches → Branch protection rules → New rule → Branch name pattern: main`.
+
+CLI alternative:
+
+- Ensure `gh` CLI is installed and authenticated (`gh auth login`).
+- From repo root: `OWNER=<owner> REPO=<repo> make protect-main`
+- Or customize checks: `CONTEXTS="Flutter CI / build-test,Semantic PR Title" OWNER=<owner> REPO=<repo> bash scripts/protect_main_branch.sh`
