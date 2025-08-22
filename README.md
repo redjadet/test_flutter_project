@@ -46,7 +46,7 @@ Install a pre-commit hook that runs `prepare` before each commit:
     You can create `.git/hooks/pre-commit` that calls it, e.g.:
     - `pwsh -File scripts/hooks/pre-commit.ps1`
 
-Note: The hook aborts the commit if formatting changes files, so you can review and re-stage.
+Note: The hook is non-blocking. It auto-applies formatting and ARB fixes, stages the changes, and continues the commit.
 
 Conventional Commits enforcement (optional):
 
