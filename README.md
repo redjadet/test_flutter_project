@@ -47,3 +47,25 @@ Install a pre-commit hook that runs `prepare` before each commit:
     - `pwsh -File scripts/hooks/pre-commit.ps1`
 
 Note: The hook aborts the commit if formatting changes files, so you can review and re-stage.
+
+## Repo Setup
+
+Initialize local Git and make the first commit:
+
+- `git init && git branch -M main`
+- `git config user.name "Your Name"`
+- `git config user.email "you@example.com"`
+- `git add .`
+- `git commit -m "chore(repo): initial Git setup"`
+
+Recommended Git configuration:
+
+- macOS/Linux line endings: `git config core.autocrlf input`
+- Windows line endings: `git config core.autocrlf true`
+- Safe CRLF warnings: `git config core.safecrlf warn`
+- Prefer merge (default): `git config pull.rebase false`
+
+Notes:
+
+- `.gitignore` and `.gitattributes` are included to ignore Flutter build artifacts and enforce consistent line endings. Adjust as needed.
+- Consider Git LFS for large binary assets (images, fonts, archives): https://git-lfs.github.com/
