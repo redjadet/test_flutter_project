@@ -1,16 +1,22 @@
-# Flutter/Dart
+# Flutter / Dart
 .dart_tool/
 .packages
-pubspec.lock
+# In Flutter apps, commit pubspec.lock. Only ignore in packages.
+# pubspec.lock
 
 # Build outputs
 build/
+**/build/
 
 # Android
 **/android/.gradle/
 **/android/captures/
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
+**/android/**/GeneratedPluginRegistrant.kt
+**/android/app/debug.keystore
+**/android/key.properties
+**/android/**/gradle-wrapper.jar
 
 # iOS/macOS
 **/ios/Flutter/.last_build_id
@@ -21,12 +27,22 @@ build/
 **/ios/Flutter/ephemeral/
 **/ios/Pods/
 **/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/**/Flutter.podspec
+**/ios/**/flutter_export_environment.sh
+**/ios/**/Pods/
+**/ios/**/.symlinks/
+**/ios/**/xcuserdata/
+**/ios/**/DerivedData/
 **/macos/Flutter/GeneratedPluginRegistrant.swift
 **/macos/Flutter/ephemeral/
 **/macos/Pods/
+**/macos/**/.symlinks/
+**/macos/**/xcuserdata/
+**/macos/**/DerivedData/
 
 # Web
 **/web/.dart_tool/
+**/web/.firebase/
 
 # Windows
 **/windows/Flutter/ephemeral/
@@ -45,6 +61,8 @@ build/
 .flutter-plugins
 .flutter-plugins-dependencies
 .metadata
+.fvm/
+pubspec_overrides.yaml
 
 # Coverage
 coverage/
@@ -56,6 +74,16 @@ coverage/
 
 # Others
 *.log
-*.lock
 *.DS_Store
 *.orig
+*.keystore
+*.jks
+
+# CocoaPods
+**/Pods/
+**/.symlinks/
+**/vendor/
+
+# Xcode user data
+**/*.xcuserdatad
+**/*.xcscmblueprint

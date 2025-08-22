@@ -16,7 +16,7 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen>
     implements SettingsView {
   static const EdgeInsets _contentPadding = EdgeInsets.all(16.0);
-  static const double _fieldSpacing = 16.0;
+  static const double _sectionSpacing = 16.0;
 
   late final TextEditingController _nameController;
   late final SettingsPresenter _presenter;
@@ -26,6 +26,10 @@ class _SettingsScreenState extends State<SettingsScreen>
   @override
   void initState() {
     super.initState();
+    _initializeDependencies();
+  }
+
+  void _initializeDependencies() {
     _initializePresenter();
     _initializeNameController();
   }
@@ -71,6 +75,7 @@ class _SettingsScreenState extends State<SettingsScreen>
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final themeMode = context.select(
       (DashboardController c) => c.state.themeMode,
@@ -78,45 +83,77 @@ class _SettingsScreenState extends State<SettingsScreen>
     final currentLocale = context.select(
       (DashboardController c) => c.state.localeCode,
     );
-    final loc = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: Text(loc.settingsTitle)),
-      body: SafeArea(
-        child: ListView(
-          padding: _contentPadding,
-          children: [
-            SettingsProfileSection(
-              nameController: _nameController,
-              isValid: _valid,
-              isDirty: _dirty,
-              onNameChanged: _onNameChanged,
-              onSavePressed: _onSavePressed,
-              loc: loc,
-              scheme: scheme,
-            ),
-            const SizedBox(height: _fieldSpacing),
-            SettingsThemeSection(
-              themeMode: themeMode,
-              onThemeChanged: _presenter.updateThemeMode,
-              loc: loc,
-            ),
-            const SizedBox(height: _fieldSpacing),
-            SettingsLocaleSection(
-              currentLocale: currentLocale,
-              onLocaleChanged: _presenter.updateLocale,
-              loc: loc,
-            ),
-            const SizedBox(height: _fieldSpacing),
-            SettingsBackendSection(presenter: _presenter, loc: loc),
-            const SizedBox(height: _fieldSpacing),
-            SettingsResetSection(
-              onResetPressed: _presenter.resetToDefaults,
-              loc: loc,
-            ),
-          ],
-        ),
+      appBar: _buildAppBar(loc),
+      body: _buildBody(loc, scheme, themeMode, currentLocale),
+    );
+  }
+
+  PreferredSizeWidget _buildAppBar(AppLocalizations loc) {
+    return AppBar(title: Text(loc.settingsTitle));
+  }
+
+  Widget _buildBody(
+    AppLocalizations loc,
+    ColorScheme scheme,
+    ThemeMode themeMode,
+    String currentLocale,
+  ) {
+    return SafeArea(
+      child: ListView(
+        padding: _contentPadding,
+        children: [
+          _buildProfileSection(loc, scheme),
+          const SizedBox(height: _sectionSpacing),
+          _buildThemeSection(loc, themeMode),
+          const SizedBox(height: _sectionSpacing),
+          _buildLocaleSection(loc, currentLocale),
+          const SizedBox(height: _sectionSpacing),
+          _buildBackendSection(loc),
+          const SizedBox(height: _sectionSpacing),
+          _buildResetSection(loc),
+        ],
       ),
+    );
+  }
+
+  Widget _buildProfileSection(AppLocalizations loc, ColorScheme scheme) {
+    return SettingsProfileSection(
+      nameController: _nameController,
+      isValid: _valid,
+      isDirty: _dirty,
+      onNameChanged: _onNameChanged,
+      onSavePressed: _onSavePressed,
+      loc: loc,
+      scheme: scheme,
+    );
+  }
+
+  Widget _buildThemeSection(AppLocalizations loc, ThemeMode themeMode) {
+    return SettingsThemeSection(
+      themeMode: themeMode,
+      onThemeChanged: _presenter.updateThemeMode,
+      loc: loc,
+    );
+  }
+
+  Widget _buildLocaleSection(AppLocalizations loc, String currentLocale) {
+    return SettingsLocaleSection(
+      currentLocale: currentLocale,
+      onLocaleChanged: _presenter.updateLocale,
+      loc: loc,
+    );
+  }
+
+  Widget _buildBackendSection(AppLocalizations loc) {
+    return SettingsBackendSection(presenter: _presenter, loc: loc);
+  }
+
+  Widget _buildResetSection(AppLocalizations loc) {
+    return SettingsResetSection(
+      onResetPressed: _presenter.resetToDefaults,
+      loc: loc,
     );
   }
 }

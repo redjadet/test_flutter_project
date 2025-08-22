@@ -5,7 +5,16 @@ import 'package:complex_ui_openai/features/dashboard/state/persistence_repo.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SettingsProfileSection extends StatelessWidget {
+mixin SettingsSectionMixin {
+  Widget buildSectionHeader(String title) {
+    return Text(
+      title,
+      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    );
+  }
+}
+
+class SettingsProfileSection extends StatelessWidget with SettingsSectionMixin {
   final TextEditingController nameController;
   final bool isValid;
   final bool isDirty;
@@ -30,37 +39,45 @@ class SettingsProfileSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(loc.profile, style: Theme.of(context).textTheme.titleLarge),
+        buildSectionHeader(loc.profile),
         const SizedBox(height: 12),
-        TextField(
-          controller: nameController,
-          decoration: InputDecoration(
-            labelText: loc.yourName,
-            border: const OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: scheme.primary),
-            ),
-            errorText: isValid ? null : loc.nameTooShort,
-          ),
-          textInputAction: TextInputAction.done,
-          onChanged: onNameChanged,
-          onSubmitted: (_) => onSavePressed(),
-        ),
+        _buildNameField(),
         const SizedBox(height: 8),
-        Align(
-          alignment: Alignment.centerRight,
-          child: ElevatedButton.icon(
-            onPressed: isDirty && isValid ? onSavePressed : null,
-            icon: const Icon(Icons.save),
-            label: Text(loc.save),
-          ),
-        ),
+        _buildSaveButton(),
       ],
+    );
+  }
+
+  Widget _buildNameField() {
+    return TextField(
+      controller: nameController,
+      decoration: InputDecoration(
+        labelText: loc.yourName,
+        border: const OutlineInputBorder(),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: scheme.primary),
+        ),
+        errorText: isValid ? null : loc.nameTooShort,
+      ),
+      textInputAction: TextInputAction.done,
+      onChanged: onNameChanged,
+      onSubmitted: (_) => onSavePressed(),
+    );
+  }
+
+  Widget _buildSaveButton() {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: ElevatedButton.icon(
+        onPressed: isDirty && isValid ? onSavePressed : null,
+        icon: const Icon(Icons.save),
+        label: Text(loc.save),
+      ),
     );
   }
 }
 
-class SettingsThemeSection extends StatelessWidget {
+class SettingsThemeSection extends StatelessWidget with SettingsSectionMixin {
   final ThemeMode themeMode;
   final ValueChanged<ThemeMode> onThemeChanged;
   final AppLocalizations loc;
@@ -77,26 +94,30 @@ class SettingsThemeSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(loc.appearance, style: Theme.of(context).textTheme.titleLarge),
+        buildSectionHeader(loc.appearance),
         const SizedBox(height: 12),
-        DropdownButtonFormField<ThemeMode>(
-          initialValue: themeMode,
-          decoration: const InputDecoration(border: OutlineInputBorder()),
-          items: ThemeMode.values.map((mode) {
-            return DropdownMenuItem(
-              value: mode,
-              child: Text(_localizedThemeMode(loc, mode)),
-            );
-          }).toList(),
-          onChanged: (mode) {
-            if (mode != null) onThemeChanged(mode);
-          },
-        ),
+        _buildThemeDropdown(),
       ],
     );
   }
 
-  String _localizedThemeMode(AppLocalizations loc, ThemeMode mode) {
+  Widget _buildThemeDropdown() {
+    return DropdownButtonFormField<ThemeMode>(
+      initialValue: themeMode,
+      decoration: const InputDecoration(border: OutlineInputBorder()),
+      items: ThemeMode.values.map((mode) {
+        return DropdownMenuItem(
+          value: mode,
+          child: Text(_getLocalizedThemeName(mode)),
+        );
+      }).toList(),
+      onChanged: (mode) {
+        if (mode != null) onThemeChanged(mode);
+      },
+    );
+  }
+
+  String _getLocalizedThemeName(ThemeMode mode) {
     switch (mode) {
       case ThemeMode.light:
         return loc.light;
@@ -108,7 +129,7 @@ class SettingsThemeSection extends StatelessWidget {
   }
 }
 
-class SettingsLocaleSection extends StatelessWidget {
+class SettingsLocaleSection extends StatelessWidget with SettingsSectionMixin {
   final String currentLocale;
   final ValueChanged<String> onLocaleChanged;
   final AppLocalizations loc;
@@ -125,25 +146,29 @@ class SettingsLocaleSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(loc.language, style: Theme.of(context).textTheme.titleLarge),
+        buildSectionHeader(loc.language),
         const SizedBox(height: 12),
-        DropdownButtonFormField<String>(
-          initialValue: currentLocale,
-          decoration: const InputDecoration(border: OutlineInputBorder()),
-          items: [
-            DropdownMenuItem(value: 'en', child: Text(loc.english)),
-            DropdownMenuItem(value: 'tr', child: Text(loc.turkish)),
-          ],
-          onChanged: (locale) {
-            if (locale != null) onLocaleChanged(locale);
-          },
-        ),
+        _buildLocaleDropdown(),
       ],
+    );
+  }
+
+  Widget _buildLocaleDropdown() {
+    return DropdownButtonFormField<String>(
+      initialValue: currentLocale,
+      decoration: const InputDecoration(border: OutlineInputBorder()),
+      items: [
+        DropdownMenuItem(value: 'en', child: Text(loc.english)),
+        DropdownMenuItem(value: 'tr', child: Text(loc.turkish)),
+      ],
+      onChanged: (locale) {
+        if (locale != null) onLocaleChanged(locale);
+      },
     );
   }
 }
 
-class SettingsBackendSection extends StatelessWidget {
+class SettingsBackendSection extends StatelessWidget with SettingsSectionMixin {
   final ISettingsPresenter presenter;
   final AppLocalizations loc;
 
@@ -158,40 +183,37 @@ class SettingsBackendSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(loc.storage, style: Theme.of(context).textTheme.titleLarge),
+        buildSectionHeader(loc.storage),
         const SizedBox(height: 12),
-        FutureBuilder<PersistenceBackend>(
-          future: presenter.currentBackend(),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return const CircularProgressIndicator();
-            }
-            return DropdownButtonFormField<PersistenceBackend>(
-              initialValue: snapshot.data,
-              decoration: const InputDecoration(border: OutlineInputBorder()),
-              items: PersistenceBackend.values.map((backend) {
-                return DropdownMenuItem(
-                  value: backend,
-                  child: Text(_localizedBackend(loc, backend)),
-                );
-              }).toList(),
-              onChanged: (backend) async {
-                if (backend != null) {
-                  final controller = Provider.of<DashboardController>(
-                    context,
-                    listen: false,
-                  );
-                  await presenter.switchBackend(backend, controller.state);
-                }
-              },
-            );
-          },
-        ),
+        _buildBackendDropdown(),
       ],
     );
   }
 
-  String _localizedBackend(AppLocalizations loc, PersistenceBackend backend) {
+  Widget _buildBackendDropdown() {
+    return FutureBuilder<PersistenceBackend>(
+      future: presenter.currentBackend(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        return DropdownButtonFormField<PersistenceBackend>(
+          initialValue: snapshot.data,
+          decoration: const InputDecoration(border: OutlineInputBorder()),
+          items: PersistenceBackend.values.map((backend) {
+            return DropdownMenuItem(
+              value: backend,
+              child: Text(_getLocalizedBackendName(backend)),
+            );
+          }).toList(),
+          onChanged: (backend) => _handleBackendChange(context, backend),
+        );
+      },
+    );
+  }
+
+  String _getLocalizedBackendName(PersistenceBackend backend) {
     switch (backend) {
       case PersistenceBackend.file:
         return loc.file;
@@ -199,9 +221,22 @@ class SettingsBackendSection extends StatelessWidget {
         return loc.database;
     }
   }
+
+  Future<void> _handleBackendChange(
+    BuildContext context,
+    PersistenceBackend? backend,
+  ) async {
+    if (backend != null) {
+      final controller = Provider.of<DashboardController>(
+        context,
+        listen: false,
+      );
+      await presenter.switchBackend(backend, controller.state);
+    }
+  }
 }
 
-class SettingsResetSection extends StatelessWidget {
+class SettingsResetSection extends StatelessWidget with SettingsSectionMixin {
   final VoidCallback onResetPressed;
   final AppLocalizations loc;
 
@@ -216,18 +251,22 @@ class SettingsResetSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(loc.dangerZone, style: Theme.of(context).textTheme.titleLarge),
+        buildSectionHeader(loc.dangerZone),
         const SizedBox(height: 12),
-        ElevatedButton.icon(
-          onPressed: onResetPressed,
-          icon: const Icon(Icons.restore),
-          label: Text(loc.resetToDefaults),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.red,
-            foregroundColor: Colors.white,
-          ),
-        ),
+        _buildResetButton(),
       ],
+    );
+  }
+
+  Widget _buildResetButton() {
+    return ElevatedButton.icon(
+      onPressed: onResetPressed,
+      icon: const Icon(Icons.restore),
+      label: Text(loc.resetToDefaults),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.red,
+        foregroundColor: Colors.white,
+      ),
     );
   }
 }
