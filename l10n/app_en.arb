@@ -43,11 +43,17 @@
     }
   },
   "settingsTitle": "Settings",
+  "@settingsTitle": {},
   "profile": "Profile",
+  "@profile": {},
   "yourName": "Your name",
+  "@yourName": {},
   "nameTooShort": "Name must be at least 2 chars",
+  "@nameTooShort": {},
   "save": "Save",
+  "@save": {},
   "settingsSaved": "Settings saved",
+  "@settingsSaved": {},
   "appearance": "Appearance",
   "light": "Light",
   "dark": "Dark",
@@ -55,6 +61,7 @@
   "storage": "Storage",
   "file": "File",
   "database": "DB",
+  "@database": {},
   "storageSwitched": "Storage switched to {backend}",
   "@storageSwitched": {
     "placeholders": {

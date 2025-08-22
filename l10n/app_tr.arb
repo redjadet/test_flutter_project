@@ -68,6 +68,7 @@
   "turkish": "Türkçe",
   "resetToDefaults": "Varsayılanlara sıfırla",
   "settingsReset": "Ayarlar varsayılanlara sıfırlandı",
+  "@settingsReset": {},
   "dangerZone": "Ayarları Sıfırla",
   "confirmResetTitle": "Ayarlar sıfırlansın mı?",
   "confirmResetMessage": "Bu işlem ad, tema ve dili varsayılanlara döndürür.",
