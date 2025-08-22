@@ -1,0 +1,33 @@
+* text=auto
+
+# Enforce LF for source files
+*.dart text eol=lf
+*.kt text eol=lf
+*.swift text eol=lf
+*.m text eol=lf
+*.mm text eol=lf
+*.gradle text eol=lf
+*.java text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+*.plist text eol=lf
+
+# Windows scripts keep CRLF
+*.bat eol=crlf
+
+# Treat common assets as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.zip binary
+*.apk binary
+*.aab binary
