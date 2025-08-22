@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # Prefer const where possible for better performance.
+    - prefer_const_constructors
+    - prefer_const_declarations
+    # Keep imports tidy and consistent.
+    - directives_ordering
+    - always_use_package_imports
+    # Avoid noisy prints in production code.
+    - avoid_print
+    # Encourage explicit typing for readability in shared code.
+    - always_declare_return_types

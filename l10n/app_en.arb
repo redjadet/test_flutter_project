@@ -1,0 +1,76 @@
+{
+  "@@locale": "en",
+  "dashboardTitle": "Dashboard 123",
+  "@dashboardTitle": {
+    "description": "Title of the dashboard app bar"
+  },
+  "statistics": "Statistics",
+  "@statistics": {
+    "description": "Section title for statistics"
+  },
+  "noCharts": "No charts available",
+  "@noCharts": {
+    "description": "Empty state when no charts"
+  },
+  "noMetrics": "No metrics available",
+  "@noMetrics": {
+    "description": "Empty state when no metrics"
+  },
+  "openChartDetailsTooltip": "Open chart details",
+  "@openChartDetailsTooltip": {
+    "description": "Tooltip for opening chart details"
+  },
+  "openBarChartDetailsSemantics": "Open bar chart details",
+  "@openBarChartDetailsSemantics": {
+    "description": "Semantics label for bar chart tap area"
+  },
+  "welcomeBack": "Welcome Back, {name}",
+  "@welcomeBack": {
+    "description": "Welcome message on dashboard",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chartDetailTitle": "Chart {number} Detail",
+  "@chartDetailTitle": {
+    "description": "Title for a chart detail screen",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTitle": "Settings",
+  "profile": "Profile",
+  "yourName": "Your name",
+  "nameTooShort": "Name must be at least 2 chars",
+  "save": "Save",
+  "settingsSaved": "Settings saved",
+  "appearance": "Appearance",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "storage": "Storage",
+  "file": "File",
+  "database": "DB",
+  "storageSwitched": "Storage switched to {backend}",
+  "@storageSwitched": {
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    }
+  },
+  "language": "Language",
+  "english": "English",
+  "turkish": "Turkish",
+  "resetToDefaults": "Reset to defaults",
+  "settingsReset": "Settings reset to defaults",
+  "dangerZone": "Reset settings",
+  "confirmResetTitle": "Reset settings?",
+  "confirmResetMessage": "This will restore name, theme, and language to defaults.",
+  "cancel": "Cancel",
+  "confirm": "Confirm"
+}

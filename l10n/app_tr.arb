@@ -1,0 +1,76 @@
+{
+  "@@locale": "tr",
+  "dashboardTitle": "Gösterge Paneli",
+  "@dashboardTitle": {
+    "description": "App bar başlığı"
+  },
+  "statistics": "İstatistikler",
+  "@statistics": {
+    "description": "İstatistikler bölüm başlığı"
+  },
+  "noCharts": "Grafik yok",
+  "@noCharts": {
+    "description": "Grafik yok boş durum"
+  },
+  "noMetrics": "Metrik yok",
+  "@noMetrics": {
+    "description": "Metrik yok boş durum"
+  },
+  "openChartDetailsTooltip": "Grafik detaylarını aç",
+  "@openChartDetailsTooltip": {
+    "description": "Grafik detaylarını aç ipucu"
+  },
+  "openBarChartDetailsSemantics": "Çubuk grafik detaylarını aç",
+  "@openBarChartDetailsSemantics": {
+    "description": "Çubuk grafik erişilebilirlik etiketi"
+  },
+  "welcomeBack": "Tekrar Hoş Geldin, {name}",
+  "@welcomeBack": {
+    "description": "Welcome message on dashboard",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chartDetailTitle": "Grafik {number} Detayı",
+  "@chartDetailTitle": {
+    "description": "Title for a chart detail screen",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsTitle": "Ayarlar",
+  "profile": "Profil",
+  "yourName": "Adın",
+  "nameTooShort": "İsim en az 2 karakter olmalı",
+  "save": "Kaydet",
+  "settingsSaved": "Ayarlar kaydedildi",
+  "appearance": "Görünüm",
+  "light": "Açık",
+  "dark": "Koyu",
+  "system": "Sistem",
+  "storage": "Depolama",
+  "file": "Dosya",
+  "database": "Veritabanı",
+  "storageSwitched": "Depolama {backend} olarak değiştirildi",
+  "@storageSwitched": {
+    "placeholders": {
+      "backend": {
+        "type": "String"
+      }
+    }
+  },
+  "language": "Dil",
+  "english": "İngilizce",
+  "turkish": "Türkçe",
+  "resetToDefaults": "Varsayılanlara sıfırla",
+  "settingsReset": "Ayarlar varsayılanlara sıfırlandı",
+  "dangerZone": "Ayarları Sıfırla",
+  "confirmResetTitle": "Ayarlar sıfırlansın mı?",
+  "confirmResetMessage": "Bu işlem ad, tema ve dili varsayılanlara döndürür.",
+  "cancel": "İptal",
+  "confirm": "Onayla"
+}

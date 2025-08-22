@@ -1,0 +1,61 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+pubspec.lock
+
+# Build outputs
+build/
+
+# Android
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+
+# iOS/macOS
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/App.framework/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Pods/
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+**/macos/Pods/
+
+# Web
+**/web/.dart_tool/
+
+# Windows
+**/windows/Flutter/ephemeral/
+
+# Linux
+**/linux/flutter/ephemeral/
+
+# IntelliJ/Android Studio
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Flutter specific metadata
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Coverage
+coverage/
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots/
+
+# Others
+*.log
+*.lock
+*.DS_Store
+*.orig
