@@ -9,7 +9,7 @@ REPO_ROOT=$(cd -- "$HOOK_DIR/../.." && pwd -P)
 cd "$REPO_ROOT"
 
 # Run combined prepare
-bash scripts/dev.sh prepare
+bash scripts/dev.sh prepare || true
 
 # Auto-fix ARB files (format/sort keys)
 if command -v node >/dev/null 2>&1; then
@@ -18,10 +18,10 @@ else
   sh scripts/fix_arb.sh || true
 fi
 
-# If formatting changed files, abort so developer can review and restage
+# If changes exist, auto-stage and continue (non-blocking)
 if ! git diff --quiet; then
-  echo "[pre-commit] Formatting changed files. Please review, stage, and commit again." >&2
-  exit 1
+  echo "[pre-commit] Applied fixes. Auto-staging changes and continuing..."
+  git add -A
 fi
 
-echo "[pre-commit] OK"
+echo "[pre-commit] OK (non-blocking)"

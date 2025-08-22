@@ -29,20 +29,13 @@
   },
 
   // Run ARB fixer automatically when saving any .arb file (mac/Linux)
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "\\.arb$",
-        "cmd": "node ${workspaceFolder}/scripts/fix_arb_node.js"
-      }
-    ]
-  },
+  // Using Auto Run Command for on-save actions to avoid shell dependencies
 
   // Auto Run Command extension: run fixer on save for .arb files
   // If you installed 'Auto Run Command', this triggers on save.
   "auto-run-command.rules": [
     {
-      "command": "node ${workspaceFolder}/scripts/fix_arb_node.js",
+      "command": "node ${workspaceFolder}/scripts/fix_arb_node.js ${file}",
       "isShellCommand": true,
       "autoRun": "onSave",
       "fileMatch": "**/*.arb"

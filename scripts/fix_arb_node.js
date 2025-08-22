@@ -71,10 +71,14 @@ async function normalizeFile(file) {
 
 async function main() {
   const repoRoot = process.cwd();
+  const arg = process.argv[2];
+  if (arg && arg.endsWith('.arb')) {
+    await normalizeFile(path.resolve(repoRoot, arg));
+    return;
+  }
   const l10nDir = path.join(repoRoot, 'l10n');
   const files = await listArbFiles(l10nDir);
   await Promise.all(files.map(normalizeFile));
 }
 
 main();
-

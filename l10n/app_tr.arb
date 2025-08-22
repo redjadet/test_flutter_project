@@ -18,7 +18,9 @@
     }
   },
   "confirm": "Onayla",
-  "@confirm": {},
+  "@confirm": {
+    "description": "TODO: add description for \"confirm\""
+  },
   "confirmResetMessage": "Bu işlem ad, tema ve dili varsayılanlara döndürür.",
   "@confirmResetMessage": {
     "description": "TODO: add description for \"confirmResetMessage\""
