@@ -1,31 +1,27 @@
 ---
 name: Bug report
 about: Report a reproducible problem
-title: "bug: <short summary>"
 labels: bug
-assignees: ''
 ---
 
-## Summary
-A clear, concise description of the bug.
+## Describe the bug
+<!-- Clear, concise description of the issue -->
 
-## Steps to Reproduce
-1. ...
-2. ...
-3. ...
+## Steps to reproduce
+1. 
+2. 
+3. 
 
-## Expected vs Actual
-- Expected: 
-- Actual: 
+## Expected behavior
 
-## Screenshots / Recordings
-If applicable, add images or a short GIF.
+## Screenshots or logs
+<!-- Attach images or paste relevant logs/stacktraces -->
 
 ## Environment
 - Flutter: `flutter --version`
-- Platform: Android / iOS / Web / macOS / Windows / Linux
-- Device/Emulator: 
+- Platform: iOS / Android / Web / macOS / Windows / Linux
+- Device/Simulator: 
 
-## Additional Context
-Logs, stack traces (`flutter run -v` snippet), or notes.
+## Additional context
+<!-- Any other info, related issues, PRs -->
 

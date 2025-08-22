@@ -48,6 +48,11 @@ Install a pre-commit hook that runs `prepare` before each commit:
 
 Note: The hook aborts the commit if formatting changes files, so you can review and re-stage.
 
+Conventional Commits enforcement (optional):
+
+- Install both hooks (pre-commit + commit-msg): `make hook-install-all`
+- Commit messages must follow `<type>(<scope>): <subject>`.
+
 ## Repo Setup
 
 Initialize local Git and make the first commit:
@@ -69,3 +74,16 @@ Notes:
 
 - `.gitignore` and `.gitattributes` are included to ignore Flutter build artifacts and enforce consistent line endings. Adjust as needed.
 - Consider Git LFS for large binary assets (images, fonts, archives): https://git-lfs.github.com/
+
+## Branch Protection (Recommended)
+
+Protect `main` to keep it always releasable:
+
+- Require PRs: enable “Require a pull request before merging”.
+- Require status checks: `Flutter CI / build-test` must pass.
+- Require PR title convention: keep `Semantic PR Title` check passing.
+- Require code review: at least 1 approving review; dismiss stale approvals on new commits.
+- Enforce for admins: enable to apply rules to admins too.
+- Restrict who can push: allow only maintainers/bots if desired.
+
+GitHub path: `Settings → Branches → Branch protection rules → New rule → Branch name pattern: main`.

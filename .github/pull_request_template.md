@@ -1,40 +1,29 @@
-# Pull Request
-
 ## Summary
-- Briefly describe the change and motivation.
+<!-- What does this change do? Why? -->
 
-## Screenshots / Recordings
-- Attach before/after images or a short GIF for UI changes.
+## Type
+- [ ] feat
+- [ ] fix
+- [ ] refactor
+- [ ] docs
+- [ ] test
+- [ ] chore
 
-## Type of Change
-- [ ] feat: new feature
-- [ ] fix: bug fix
-- [ ] refactor: code change that improves structure
-- [ ] perf: performance improvement
-- [ ] docs: documentation update
-- [ ] test: add or improve tests
-- [ ] chore: tooling, CI, config
+## Screenshots
+<!-- UI changes: add before/after images or GIFs -->
 
-## How to Test
-- Steps to verify locally (device/emulator, platform, screen).
-- Example: `flutter pub get && flutter run -d chrome`.
-
-## Linked Issues
-- Closes #<issue-number>
+## How to test
+1. `make prepare`
+2. `make test` (or `flutter test -r compact`)
+3. Manual steps:
 
 ## Checklist
-- [ ] Follows `AGENTS.md` guidelines and naming conventions
-- [ ] Ran `flutter analyze` (no new warnings)
-- [ ] Ran `dart format .` (or IDE formatter)
-- [ ] Tests pass: `flutter test`
-- [ ] Added/updated tests or provided rationale if not applicable
-- [ ] Updated docs/user-facing notes if needed
-- [ ] Considered platforms (Android, iOS, web, desktop as relevant)
-- [ ] No secrets or sensitive files committed
+- [ ] Follows MVP + SOLID + Clean Code
+- [ ] Presenter logic tested (unit)
+- [ ] View delegates to presenter (widget tests)
+- [ ] No secrets/keys committed
+- [ ] Updated docs (README/CONTRIBUTING) if needed
 
-## Breaking Changes
-- Describe any breaking changes and migration steps, or state “None”.
-
-## Additional Notes for Reviewers
-- Call out tricky areas, tradeoffs, or follow-ups.
+## Linked issues
+<!-- e.g., Closes #123, Relates to #456 -->
 

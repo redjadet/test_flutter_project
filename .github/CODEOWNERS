@@ -1,0 +1,25 @@
+# Code owners for this repository
+# Learn more: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner(s) for everything
+*                                   @ilkersevim
+
+# Core architecture, shared UI, and tooling
+/lib/core/                          @ilkersevim
+/lib/shared/                        @ilkersevim
+/.github/                           @ilkersevim
+/scripts/                           @ilkersevim
+
+# Feature ownership
+# Add additional owners separated by spaces, e.g. @user1 @user2
+/lib/features/dashboard/            @ilkersevim
+/lib/features/chat/                 @ilkersevim
+/lib/features/profile/              @ilkersevim
+
+# Platform-specific projects
+/android/                           @ilkersevim
+/ios/                               @ilkersevim
+/macos/                             @ilkersevim
+/windows/                           @ilkersevim
+/linux/                             @ilkersevim
+/web/                               @ilkersevim
