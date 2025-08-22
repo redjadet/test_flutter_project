@@ -1,37 +1,12 @@
 {
   "@@locale": "tr",
-  "dashboardTitle": "Gösterge Paneli",
-  "@dashboardTitle": {
-    "description": "App bar başlığı"
+  "appearance": "Görünüm",
+  "@appearance": {
+    "description": "TODO: add description for \"appearance\""
   },
-  "statistics": "İstatistikler",
-  "@statistics": {
-    "description": "İstatistikler bölüm başlığı"
-  },
-  "noCharts": "Grafik yok",
-  "@noCharts": {
-    "description": "Grafik yok boş durum"
-  },
-  "noMetrics": "Metrik yok",
-  "@noMetrics": {
-    "description": "Metrik yok boş durum"
-  },
-  "openChartDetailsTooltip": "Grafik detaylarını aç",
-  "@openChartDetailsTooltip": {
-    "description": "Grafik detaylarını aç ipucu"
-  },
-  "openBarChartDetailsSemantics": "Çubuk grafik detaylarını aç",
-  "@openBarChartDetailsSemantics": {
-    "description": "Çubuk grafik erişilebilirlik etiketi"
-  },
-  "welcomeBack": "Tekrar Hoş Geldin, {name}",
-  "@welcomeBack": {
-    "description": "Welcome message on dashboard",
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
+  "cancel": "İptal",
+  "@cancel": {
+    "description": "TODO: add description for \"cancel\""
   },
   "chartDetailTitle": "Grafik {number} Detayı",
   "@chartDetailTitle": {
@@ -42,19 +17,98 @@
       }
     }
   },
-  "settingsTitle": "Ayarlar",
-  "profile": "Profil",
-  "yourName": "Adın",
-  "nameTooShort": "İsim en az 2 karakter olmalı",
-  "save": "Kaydet",
-  "settingsSaved": "Ayarlar kaydedildi",
-  "appearance": "Görünüm",
-  "light": "Açık",
+  "confirm": "Onayla",
+  "@confirm": {},
+  "confirmResetMessage": "Bu işlem ad, tema ve dili varsayılanlara döndürür.",
+  "@confirmResetMessage": {
+    "description": "TODO: add description for \"confirmResetMessage\""
+  },
+  "confirmResetTitle": "Ayarlar sıfırlansın mı?",
+  "@confirmResetTitle": {
+    "description": "TODO: add description for \"confirmResetTitle\""
+  },
+  "dangerZone": "Ayarları Sıfırla",
+  "@dangerZone": {
+    "description": "TODO: add description for \"dangerZone\""
+  },
   "dark": "Koyu",
-  "system": "Sistem",
-  "storage": "Depolama",
-  "file": "Dosya",
+  "@dark": {
+    "description": "TODO: add description for \"dark\""
+  },
+  "dashboardTitle": "Gösterge Paneli",
+  "@dashboardTitle": {
+    "description": "App bar başlığı"
+  },
   "database": "Veritabanı",
+  "@database": {
+    "description": "TODO: add description for \"database\""
+  },
+  "english": "İngilizce",
+  "@english": {
+    "description": "TODO: add description for \"english\""
+  },
+  "file": "Dosya",
+  "@file": {
+    "description": "TODO: add description for \"file\""
+  },
+  "language": "Dil",
+  "@language": {
+    "description": "TODO: add description for \"language\""
+  },
+  "light": "Açık",
+  "@light": {
+    "description": "TODO: add description for \"light\""
+  },
+  "nameTooShort": "İsim en az 2 karakter olmalı",
+  "@nameTooShort": {
+    "description": "TODO: add description for \"nameTooShort\""
+  },
+  "noCharts": "Grafik yok",
+  "@noCharts": {
+    "description": "Grafik yok boş durum"
+  },
+  "noMetrics": "Metrik yok",
+  "@noMetrics": {
+    "description": "Metrik yok boş durum"
+  },
+  "openBarChartDetailsSemantics": "Çubuk grafik detaylarını aç",
+  "@openBarChartDetailsSemantics": {
+    "description": "Çubuk grafik erişilebilirlik etiketi"
+  },
+  "openChartDetailsTooltip": "Grafik detaylarını aç",
+  "@openChartDetailsTooltip": {
+    "description": "Grafik detaylarını aç ipucu"
+  },
+  "profile": "Profil",
+  "@profile": {
+    "description": "TODO: add description for \"profile\""
+  },
+  "resetToDefaults": "Varsayılanlara sıfırla",
+  "@resetToDefaults": {
+    "description": "TODO: add description for \"resetToDefaults\""
+  },
+  "save": "Kaydet",
+  "@save": {
+    "description": "TODO: add description for \"save\""
+  },
+  "settingsReset": "Ayarlar varsayılanlara sıfırlandı",
+  "@settingsReset": {},
+  "settingsSaved": "Ayarlar kaydedildi",
+  "@settingsSaved": {
+    "description": "TODO: add description for \"settingsSaved\""
+  },
+  "settingsTitle": "Ayarlar",
+  "@settingsTitle": {
+    "description": "TODO: add description for \"settingsTitle\""
+  },
+  "statistics": "İstatistikler",
+  "@statistics": {
+    "description": "İstatistikler bölüm başlığı"
+  },
+  "storage": "Depolama",
+  "@storage": {
+    "description": "TODO: add description for \"storage\""
+  },
   "storageSwitched": "Depolama {backend} olarak değiştirildi",
   "@storageSwitched": {
     "placeholders": {
@@ -63,15 +117,25 @@
       }
     }
   },
-  "language": "Dil",
-  "english": "İngilizce",
+  "system": "Sistem",
+  "@system": {
+    "description": "TODO: add description for \"system\""
+  },
   "turkish": "Türkçe",
-  "resetToDefaults": "Varsayılanlara sıfırla",
-  "settingsReset": "Ayarlar varsayılanlara sıfırlandı",
-  "@settingsReset": {},
-  "dangerZone": "Ayarları Sıfırla",
-  "confirmResetTitle": "Ayarlar sıfırlansın mı?",
-  "confirmResetMessage": "Bu işlem ad, tema ve dili varsayılanlara döndürür.",
-  "cancel": "İptal",
-  "confirm": "Onayla"
+  "@turkish": {
+    "description": "TODO: add description for \"turkish\""
+  },
+  "welcomeBack": "Tekrar Hoş Geldin, {name}",
+  "@welcomeBack": {
+    "description": "Welcome message on dashboard",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "yourName": "Adın",
+  "@yourName": {
+    "description": "TODO: add description for \"yourName\""
+  }
 }
