@@ -1,6 +1,6 @@
-# complex_ui_openai
+# test_flutter_project
 
-Flutter dashboard UI demo with Riverpod and fl_chart.
+Flutter dashboard UI demo with fl_chart.
 
 ## Dev Scripts
 
