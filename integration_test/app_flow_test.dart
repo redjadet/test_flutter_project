@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/app.dart';
+import 'package:complex_ui/app.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';

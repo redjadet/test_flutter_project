@@ -1,6 +1,6 @@
-import 'package:complex_ui_openai/core/ui/chart_config.dart';
-import 'package:complex_ui_openai/core/ui/layout.dart';
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/core/ui/chart_config.dart';
+import 'package:complex_ui/core/ui/layout.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 

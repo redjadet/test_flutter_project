@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="mipmap" name="ic_launcher_test">@mipmap/ic_launcher</item>
+    <item type="mipmap" name="ic_launcher_test_round">@mipmap/ic_launcher_round</item>
+</resources>

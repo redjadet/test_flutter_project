@@ -4,9 +4,9 @@ View Widget Template (Provider + StatefulWidget)
 
 // import 'package:flutter/material.dart';
 // import 'package:provider/provider.dart';
-// import 'package:complex_ui_openai/core/mvp/presenter.dart';
-// import 'package:complex_ui_openai/features/<feature>/presentation/<feature>_presenter.dart';
-// import 'package:complex_ui_openai/features/<feature>/state/<feature>_controller.dart';
+// import 'package:complex_ui/core/mvp/presenter.dart';
+// import 'package:complex_ui/features/<feature>/presentation/<feature>_presenter.dart';
+// import 'package:complex_ui/features/<feature>/state/<feature>_controller.dart';
 
 class <Feature>Screen extends StatefulWidget {
   const <Feature>Screen({super.key});

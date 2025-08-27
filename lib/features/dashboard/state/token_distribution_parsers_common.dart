@@ -1,5 +1,5 @@
-import 'package:complex_ui_openai/core/theme/app_colors.dart';
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/core/theme/app_colors.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
 import 'package:flutter/material.dart';
 
 // Public so multiple parser files can share it.

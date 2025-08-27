@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:complex_ui_openai/core/theme/app_colors.dart';
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/core/theme/app_colors.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
 
-import 'package:complex_ui_openai/features/dashboard/state/token_distribution_parsers_common.dart';
+import 'package:complex_ui/features/dashboard/state/token_distribution_parsers_common.dart';
 
 List<PieSlice>? extractFromCoinMarketCapHtml(String html) {
   final re = RegExp(

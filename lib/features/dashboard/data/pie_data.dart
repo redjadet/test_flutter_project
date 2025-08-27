@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/core/theme/app_colors.dart';
+import 'package:complex_ui/core/theme/app_colors.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 

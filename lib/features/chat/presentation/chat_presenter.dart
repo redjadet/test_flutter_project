@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/core/mvp/presenter.dart';
+import 'package:complex_ui/core/mvp/presenter.dart';
 
 abstract class ChatListView {}
 

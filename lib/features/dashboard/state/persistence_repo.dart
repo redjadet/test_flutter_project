@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
-import 'package:complex_ui_openai/features/dashboard/state/persistence.dart'
+import 'package:complex_ui/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/state/persistence.dart'
     as file_store;
-import 'package:complex_ui_openai/features/dashboard/state/persistence_hive.dart'
+import 'package:complex_ui/features/dashboard/state/persistence_hive.dart'
     as db_store;
 import 'package:path_provider/path_provider.dart';
 
@@ -20,7 +20,7 @@ class PersistenceRepo {
     try {
       final base = await getApplicationSupportDirectory();
       final file = File(
-        '${base.path}/complex_ui_openai/persistence_backend.json',
+        '${base.path}/complex_ui/persistence_backend.json',
       );
       if (await file.exists()) {
         final m = jsonDecode(await file.readAsString()) as Map<String, dynamic>;
@@ -41,7 +41,7 @@ class PersistenceRepo {
     _cached = backend;
     try {
       final base = await getApplicationSupportDirectory();
-      final dir = Directory('${base.path}/complex_ui_openai');
+      final dir = Directory('${base.path}/complex_ui');
       if (!await dir.exists()) await dir.create(recursive: true);
       final file = File('${dir.path}/persistence_backend.json');
       await file.writeAsString(jsonEncode({'backend': backend.name}));

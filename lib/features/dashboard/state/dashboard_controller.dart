@@ -1,7 +1,7 @@
-import 'package:complex_ui_openai/features/dashboard/state/data_generators.dart';
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
-import 'package:complex_ui_openai/features/dashboard/state/persistence_repo.dart';
-import 'package:complex_ui_openai/features/dashboard/state/token_distribution_repo.dart';
+import 'package:complex_ui/features/dashboard/state/data_generators.dart';
+import 'package:complex_ui/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/state/persistence_repo.dart';
+import 'package:complex_ui/features/dashboard/state/token_distribution_repo.dart';
 import 'package:flutter/material.dart';
 
 class DashboardController extends ChangeNotifier {

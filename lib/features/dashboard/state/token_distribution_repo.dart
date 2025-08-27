@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
-import 'package:complex_ui_openai/features/dashboard/state/token_distribution_parsers.dart'
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/features/dashboard/state/token_distribution_parsers.dart'
     as parsers;
 import 'package:http/http.dart' as http;
 

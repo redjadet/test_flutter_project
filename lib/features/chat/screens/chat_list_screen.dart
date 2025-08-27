@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/core/ui/layout.dart';
+import 'package:complex_ui/core/ui/layout.dart';
 import 'package:flutter/material.dart';
 
 class ChatListScreen extends StatelessWidget {

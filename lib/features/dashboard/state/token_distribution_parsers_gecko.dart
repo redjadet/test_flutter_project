@@ -1,6 +1,6 @@
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
 
-import 'package:complex_ui_openai/features/dashboard/state/token_distribution_parsers_common.dart';
+import 'package:complex_ui/features/dashboard/state/token_distribution_parsers_common.dart';
 
 List<PieSlice>? extractFromCoinGeckoTickers(Map body) {
   final tickers = body['tickers'];

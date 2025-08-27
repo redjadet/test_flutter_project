@@ -1,7 +1,7 @@
-import 'package:complex_ui_openai/core/l10n/app_localizations.dart';
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_provider.dart';
-import 'package:complex_ui_openai/features/dashboard/widgets/chart_card.dart';
+import 'package:complex_ui/core/l10n/app_localizations.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_provider.dart';
+import 'package:complex_ui/features/dashboard/widgets/chart_card.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

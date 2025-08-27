@@ -18,7 +18,14 @@ help:
 	echo "  make test-integration # flutter test integration_test -r compact" && \
 	echo "  make clean            # flutter clean" && \
 	echo "  make doctor           # flutter doctor -v" && \
-	echo "  make ci               # get + analyze + test"
+	echo "  make ci               # get + analyze + test" && \
+	echo "\nFlavor runs:" && \
+	echo "  make run-dev         # flutter run --flavor dev -t lib/main_dev.dart" && \
+	echo "  make run-test        # flutter run --flavor test -t lib/main_test.dart" && \
+	echo "  make run-prod        # flutter run --flavor prod -t lib/main_prod.dart" && \
+	echo "  make apk-dev         # flutter build apk --flavor dev -t lib/main_dev.dart" && \
+	echo "  make apk-test        # flutter build apk --flavor test -t lib/main_test.dart" && \
+	echo "  make apk-prod        # flutter build apk --flavor prod -t lib/main_prod.dart"
 
 get:
 	flutter pub get
@@ -52,6 +59,24 @@ doctor:
 ci: get analyze test
 
 prepare: get format analyze
+
+run-dev:
+	flutter run --flavor dev -t lib/main_dev.dart
+
+run-test:
+	flutter run --flavor test -t lib/main_test.dart
+
+run-prod:
+	flutter run --flavor prod -t lib/main_prod.dart
+
+apk-dev:
+	flutter build apk --flavor dev -t lib/main_dev.dart
+
+apk-test:
+	flutter build apk --flavor test -t lib/main_test.dart
+
+apk-prod:
+	flutter build apk --flavor prod -t lib/main_prod.dart
 
 hook-install:
 	@mkdir -p .git/hooks

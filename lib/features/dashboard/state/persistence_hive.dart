@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/state/models.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';

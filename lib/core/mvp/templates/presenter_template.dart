@@ -5,7 +5,7 @@ MVP Presenter Template (Provider)
 Kullanım: Yeni bir özellik için presenter ve view arayüzlerini aşağıdaki şablona göre oluşturun.
 
 import 'package:provider/provider.dart';
-import 'package:complex_ui_openai/core/mvp/presenter.dart';
+import 'package:complex_ui/core/mvp/presenter.dart';
 
 abstract class <Feature>View {
   // View'e özgü UI geri çağrıları (opsiyonel)

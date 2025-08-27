@@ -1,9 +1,10 @@
-import 'package:complex_ui_openai/core/l10n/app_localizations.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/features/dashboard/screens/dashboard_screen.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
-import 'package:complex_ui_openai/features/profile/profile.dart';
-import 'package:complex_ui_openai/main_navigation.dart';
+import 'package:complex_ui/core/config/flavor.dart';
+import 'package:complex_ui/core/l10n/app_localizations.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/features/dashboard/screens/dashboard_screen.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/features/profile/profile.dart';
+import 'package:complex_ui/main_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
@@ -28,9 +29,16 @@ class ComplexApp extends StatelessWidget {
 
     return Consumer<NavigationService>(
       builder: (context, navigationService, child) {
+        final flavor = FlavorConfig.instance.flavor;
+        final suffix = switch (flavor) {
+          AppFlavor.dev => ' (DEV)',
+          AppFlavor.test => ' (TEST)',
+          AppFlavor.prod => '',
+        };
+
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Complex UI OpenAI',
+          title: 'Complex UI $suffix',
           navigatorKey: navigationService.navigatorKey,
           scaffoldMessengerKey: navigationService.scaffoldMessengerKey,
           localizationsDelegates: const [

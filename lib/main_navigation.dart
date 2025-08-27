@@ -1,5 +1,5 @@
-import 'package:complex_ui_openai/features/dashboard/screens/dashboard_screen.dart';
-import 'package:complex_ui_openai/features/profile/profile.dart';
+import 'package:complex_ui/features/dashboard/screens/dashboard_screen.dart';
+import 'package:complex_ui/features/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

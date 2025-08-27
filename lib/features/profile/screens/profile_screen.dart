@@ -1,7 +1,7 @@
-import 'package:complex_ui_openai/features/profile/widgets/profile_actions.dart';
-import 'package:complex_ui_openai/features/profile/widgets/profile_header.dart';
-import 'package:complex_ui_openai/features/profile/widgets/profile_photo_grid.dart';
-import 'package:complex_ui_openai/features/profile/widgets/profile_tab_bar.dart';
+import 'package:complex_ui/features/profile/widgets/profile_actions.dart';
+import 'package:complex_ui/features/profile/widgets/profile_header.dart';
+import 'package:complex_ui/features/profile/widgets/profile_photo_grid.dart';
+import 'package:complex_ui/features/profile/widgets/profile_tab_bar.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {

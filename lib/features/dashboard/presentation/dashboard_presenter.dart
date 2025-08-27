@@ -1,8 +1,8 @@
-import 'package:complex_ui_openai/core/mvp/presenter.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/features/chat/screens/chat_list_screen.dart';
-import 'package:complex_ui_openai/features/dashboard/screens/settings_screen.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/core/mvp/presenter.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/features/chat/screens/chat_list_screen.dart';
+import 'package:complex_ui/features/dashboard/screens/settings_screen.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
 import 'package:flutter/material.dart';
 
 abstract class DashboardView {

@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart';
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/data/pie_data.dart';
+import 'package:complex_ui/features/dashboard/state/models.dart';
 import 'package:flutter/material.dart';
 
 // Random metric generation used by dashboard demos

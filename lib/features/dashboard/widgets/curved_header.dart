@@ -1,5 +1,5 @@
-import 'package:complex_ui_openai/core/theme/app_colors.dart';
-import 'package:complex_ui_openai/shared/clipper/top_curved_clipper.dart';
+import 'package:complex_ui/core/theme/app_colors.dart';
+import 'package:complex_ui/shared/clipper/top_curved_clipper.dart';
 import 'package:flutter/material.dart';
 
 /// Decorative curved header used at the top of the dashboard.

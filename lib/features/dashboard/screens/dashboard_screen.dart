@@ -1,8 +1,8 @@
-import 'package:complex_ui_openai/core/l10n/app_localizations.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/features/dashboard/presentation/dashboard_presenter.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
-import 'package:complex_ui_openai/features/dashboard/widgets/widgets.dart';
+import 'package:complex_ui/core/l10n/app_localizations.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/features/dashboard/presentation/dashboard_presenter.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/features/dashboard/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

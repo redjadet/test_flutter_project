@@ -1,5 +1,5 @@
-import 'package:complex_ui_openai/core/theme/app_colors.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_provider.dart';
+import 'package:complex_ui/core/theme/app_colors.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_provider.dart';
 import 'package:flutter/material.dart';
 
 /// Displays a single summary metric with icon, value, and label.

@@ -2,6 +2,52 @@
 
 Flutter dashboard UI demo with fl_chart.
 
+## Flavors
+
+This project defines three flavors for environment-specific builds:
+
+- dev: development builds
+- test: QA/testing builds
+- prod: production builds (formerly named "release")
+
+Entrypoints (auto-selected per flavor):
+
+- dev → `lib/main_dev.dart`
+- test → `lib/main_test.dart`
+- prod → `lib/main_prod.dart`
+
+CLI examples:
+
+- Android: `flutter run --flavor dev` | `--flavor test` | `--flavor prod`
+- iOS: `flutter run --flavor dev` | `--flavor test` | `--flavor prod`
+  - No need to pass `-t`; iOS configs set `FLUTTER_TARGET` automatically.
+
+Makefile shortcuts:
+
+- Run: `make run-dev`, `make run-test`, `make run-prod`
+- APK: `make apk-dev`, `make apk-test`, `make apk-prod`
+
+Naming and icons:
+
+- Android app label per flavor:
+  - dev: `ComplexUI-Dev`
+  - test: `ComplexUI-Test`
+  - prod: `ComplexUI`
+- Android icons per flavor via manifest placeholders; default aliases point to the base icon until you add files named:
+  - dev: `ic_launcher_dev`/`ic_launcher_dev_round`
+  - test: `ic_launcher_test`/`ic_launcher_test_round`
+- iOS app name per flavor is driven by `APP_DISPLAY_NAME`:
+  - dev: `ComplexUI-Dev`, test: `ComplexUI-Test`, prod: `ComplexUI`
+
+Signing & bundle IDs:
+
+- Android `applicationId`: `com.ilkersevim.complex_ui` (+ suffixes for dev/test)
+- iOS bundle IDs: `com.ilkersevim.complexui` (+ `.dev` / `.test`)
+- Android signing per flavor via optional properties files under `android/keystore/`:
+  - `dev.properties`, `test.properties`, `release.properties` (used for prod)
+  - Keys: `storeFile`, `storePassword`, `keyAlias`, `keyPassword`
+- iOS signing: set your Team ID in the project or Xcode; per-flavor configs are created and mapped to schemes.
+
 ## Dev Scripts
 
 - Bash: `bash scripts/dev.sh <command>`
@@ -27,6 +73,13 @@ Commands:
 - `make clean` — clean build artifacts
 - `make doctor` — show Flutter doctor
 - `make ci` — get + analyze + test
+
+Flavor helpers:
+
+- `make run-dev` — flutter run --flavor dev
+- `make run-test` — flutter run --flavor test
+- `make run-prod` — flutter run --flavor prod
+- `make apk-dev|apk-test|apk-prod` — build Android APKs per flavor
 
 ## CI
 

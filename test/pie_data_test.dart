@@ -1,4 +1,4 @@
-import 'package:complex_ui_openai/features/dashboard/data/pie_data.dart' as pie;
+import 'package:complex_ui/features/dashboard/data/pie_data.dart' as pie;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

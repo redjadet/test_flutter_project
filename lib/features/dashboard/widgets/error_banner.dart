@@ -1,5 +1,5 @@
-import 'package:complex_ui_openai/features/dashboard/presentation/dashboard_presenter.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/features/dashboard/presentation/dashboard_presenter.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

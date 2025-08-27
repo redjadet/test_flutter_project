@@ -1,6 +1,6 @@
-import 'package:complex_ui_openai/core/mvp/presenter.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/features/dashboard/screens/bar_chart_detail.dart';
+import 'package:complex_ui/core/mvp/presenter.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/features/dashboard/screens/bar_chart_detail.dart';
 import 'package:flutter/material.dart';
 
 abstract class ChartView {}

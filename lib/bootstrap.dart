@@ -1,8 +1,8 @@
 import 'dart:ui' as ui;
 
-import 'package:complex_ui_openai/app.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/app.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
 import 'package:flutter/foundation.dart'
     show TargetPlatform, defaultTargetPlatform, kIsWeb;
 import 'package:flutter/material.dart';

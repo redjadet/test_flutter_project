@@ -1,7 +1,7 @@
-import 'package:complex_ui_openai/core/l10n/app_localizations.dart';
-import 'package:complex_ui_openai/features/dashboard/screens/dashboard_screen.dart';
-import 'package:complex_ui_openai/features/dashboard/state/dashboard_controller.dart';
-import 'package:complex_ui_openai/features/dashboard/widgets/chart_card.dart';
+import 'package:complex_ui/core/l10n/app_localizations.dart';
+import 'package:complex_ui/features/dashboard/screens/dashboard_screen.dart';
+import 'package:complex_ui/features/dashboard/state/dashboard_controller.dart';
+import 'package:complex_ui/features/dashboard/widgets/chart_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';

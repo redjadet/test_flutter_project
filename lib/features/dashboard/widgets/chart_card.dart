@@ -1,13 +1,13 @@
 import 'dart:math' as math;
 
-import 'package:complex_ui_openai/core/l10n/app_localizations.dart';
-import 'package:complex_ui_openai/core/services/navigation_service.dart';
-import 'package:complex_ui_openai/core/ui/chart_config.dart';
-import 'package:complex_ui_openai/core/ui/layout.dart';
-import 'package:complex_ui_openai/features/dashboard/presentation/chart_presenter.dart';
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
-import 'package:complex_ui_openai/features/dashboard/widgets/chart_utils.dart';
-import 'package:complex_ui_openai/features/dashboard/widgets/legend_panel.dart';
+import 'package:complex_ui/core/l10n/app_localizations.dart';
+import 'package:complex_ui/core/services/navigation_service.dart';
+import 'package:complex_ui/core/ui/chart_config.dart';
+import 'package:complex_ui/core/ui/layout.dart';
+import 'package:complex_ui/features/dashboard/presentation/chart_presenter.dart';
+import 'package:complex_ui/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/widgets/chart_utils.dart';
+import 'package:complex_ui/features/dashboard/widgets/legend_panel.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

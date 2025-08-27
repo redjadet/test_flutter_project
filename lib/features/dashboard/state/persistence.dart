@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:complex_ui_openai/features/dashboard/state/models.dart';
+import 'package:complex_ui/features/dashboard/state/models.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
@@ -10,7 +10,7 @@ import 'package:path_provider/path_provider.dart';
 // For desktop/mobile dev, writes to a .app_state folder in CWD.
 // For web (kIsWeb), persistence is skipped gracefully.
 
-const _appFolder = 'complex_ui_openai';
+const _appFolder = 'complex_ui';
 const _prefsFile = 'dashboard_prefs.json';
 const _metricsFile = 'metrics.json';
 const _chartsFile = 'charts.json';
